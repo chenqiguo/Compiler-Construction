@@ -1,0 +1,1295 @@
+START FUNCTION: CAT_execution
+INSTRUCTION:   %2 = icmp sgt i32 %0, 100
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %2, label %24, label %3
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %4 = icmp sgt i32 %0, 0
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %4, label %5, label %9
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %6 = phi i8* [ %25, %24 ], [ undef, %3 ]
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %7 = icmp sgt i32 %0, 10
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %8 = icmp sgt i32 %0, 20
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br label %10
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   ret void
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %11 = phi i32 [ 0, %5 ], [ %22, %19 ]
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %12 = tail call i8* @CAT_new(i64 8) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %7, label %13, label %14
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br label %14
+***************** IN
+{
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %15 = tail call i64 @CAT_get(i8* %12) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %16 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str, i64 0, i64 0), i64 %15)
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %17 = tail call i8* @CAT_new(i64 0) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   %17 = tail call i8* @CAT_new(i64 0) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @CAT_add(i8* %17, i8* %6, i8* %12) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   %17 = tail call i8* @CAT_new(i64 0) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %12) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @CAT_add(i8* %17, i8* %6, i8* %17) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %12) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %17) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %17) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %8, label %18, label %19
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br label %19
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %20 = tail call i64 @CAT_get(i8* %17) #3
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %21 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.1, i64 0, i64 0), i64 %20)
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %22 = add nuw nsw i32 %11, 1
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %23 = icmp eq i32 %22, %0
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %23, label %9, label %10
+***************** IN
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %12 = tail call i8* @CAT_new(i64 8) #3
+   tail call void @CAT_add(i8* %12, i8* %12, i8* %12) #3
+   tail call void @CAT_add(i8* %17, i8* %17, i8* %17) #3
+   tail call void @CAT_add(i8* %17, i8* %6, i8* %6) #3
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %25 = tail call i8* @CAT_new(i64 5) #3
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %26 = tail call i64 @CAT_get(i8* %25) #3
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   %27 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.2, i64 0, i64 0), i64 %26)
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+INSTRUCTION:   br label %5
+***************** IN
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+***************** OUT
+{
+   %25 = tail call i8* @CAT_new(i64 5) #3
+}
+**************************************
+
+
+
+START FUNCTION: main
+INSTRUCTION:   tail call void @CAT_execution(i32 %0)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret i32 0
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+START FUNCTION: CAT_new
+INSTRUCTION:   %2 = tail call noalias i8* @malloc(i64 56) #5
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %2, i8* align 1 getelementptr inbounds ([21 x i8], [21 x i8]* @.str, i64 0, i64 0), i64 20, i1 false)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %3 = getelementptr inbounds i8, i8* %2, i64 32
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @llvm.memcpy.p0i8.p0i8.i64(i8* nonnull align 1 %3, i8* align 1 getelementptr inbounds ([21 x i8], [21 x i8]* @.str, i64 0, i64 0), i64 20, i1 false)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %4 = getelementptr inbounds i8, i8* %2, i64 24
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %5 = bitcast i8* %4 to i64*
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   store i64 %0, i64* %5, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret i8* %2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+START FUNCTION: CAT_get
+INSTRUCTION:   %2 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %0)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %3 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %2, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %4 = load i64, i64* %3, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret i64 %4
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+START FUNCTION: internal_check_data
+INSTRUCTION:   %2 = icmp eq i8* %0, null
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %2, label %3, label %6
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %4 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %5 = tail call i64 @fwrite(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0), i64 30, i64 1, %struct._IO_FILE* %4) #6
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @abort() #7
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   unreachable
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %7 = bitcast i8* %0 to %struct.internal_data_t*
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %8 = tail call i32 @strncmp(i8* nonnull %0, i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.str, i64 0, i64 0), i64 20) #8
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %9 = icmp eq i32 %8, 0
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %9, label %10, label %14
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %11 = getelementptr inbounds i8, i8* %0, i64 32
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %12 = tail call i32 @strncmp(i8* nonnull %11, i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.str, i64 0, i64 0), i64 20) #8
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %13 = icmp eq i32 %12, 0
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   br i1 %13, label %17, label %14
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %15 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %16 = tail call i64 @fwrite(i8* getelementptr inbounds ([41 x i8], [41 x i8]* @.str.2, i64 0, i64 0), i64 40, i64 1, %struct._IO_FILE* %15) #6
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   tail call void @abort() #7
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   unreachable
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret %struct.internal_data_t* %7
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+START FUNCTION: CAT_set
+INSTRUCTION:   %3 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %0)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %4 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %3, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   store i64 %1, i64* %4, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret void
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+START FUNCTION: CAT_sub
+INSTRUCTION:   %4 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %1)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %5 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %2)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %6 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %0)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %7 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %4, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %8 = load i64, i64* %7, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %9 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %5, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %10 = load i64, i64* %9, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %11 = sub nsw i64 %8, %10
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %12 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %6, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   store i64 %11, i64* %12, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret void
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+START FUNCTION: CAT_add
+INSTRUCTION:   %4 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %1)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %5 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %2)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %6 = tail call fastcc %struct.internal_data_t* @internal_check_data(i8* %0)
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %7 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %4, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %8 = load i64, i64* %7, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %9 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %5, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %10 = load i64, i64* %9, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %11 = add nsw i64 %10, %8
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   %12 = getelementptr inbounds %struct.internal_data_t, %struct.internal_data_t* %6, i64 0, i32 1
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   store i64 %11, i64* %12, align 8, !tbaa !2
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
+INSTRUCTION:   ret void
+***************** IN
+{
+}
+**************************************
+***************** OUT
+{
+}
+**************************************
+
+
+
