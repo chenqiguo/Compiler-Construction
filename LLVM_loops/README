@@ -1,0 +1,66 @@
+Iterate over loops
+  llvm/0  code/1  make: iterate over outermost loops. For each outermost loop, it prints its loop information (e.g., depth) and its body. Problem: what about sub-loops?
+
+  llvm/1  code/2  make: iterate over sub-loops of each outermost loop. Problem: what about sub-loops of sub-loops?
+
+  llvm/1  code/3  make: sub-loops of sub-loops are not found.
+
+  llvm/2  code/3  make: now we iterate over every loop of a function.
+  
+  llvm/3  code/3  make: now we iterate over every loop of a function without printing the loop bodies.
+
+  Look at the CFG of code/3: Why is the first instruction a branch (1 point)?
+
+Loop normalization
+  llvm/4  code/3  make: it checks if a loop is normalized and it prints the normalized loop blocks if possible.
+
+  llvm/5  code/3  make: it also checks if a loop is in LCSSA form.
+
+  llvm/6  code/3  make: it changes the bitcode to have all loops in LCSSA form.
+
+
+Loop invariants
+  llvm/15  code/3  make: print loop invariants
+
+
+Induction variables
+  llvm/14 code/1   make: SCEVAddRecExpr induction variable
+
+  llvm/14 code/15  make: v *= 2 is not an induction variable
+
+  llvm/14 code/16  make: No induction variable (i.e., SCEVAddRecExpr)
+
+
+Loop peeling
+  llvm/12  code/0  make loop: Peel 1 iteration out of a loop.
+                              Check the CFG before and after (peel_1) to see the transformation.
+
+  llvm/13  code/0  make loop: Peel 2 iterations out of a loop.
+                              Check the CFG before and after (peel_2) to see the transformation.
+
+
+Loop unrolling
+  llvm/7  code/12 make loop: It unroll loops with known trip count. Check the CFG before and after to see the unroll.
+
+  llvm/7  code/0  make loop: it doesn't unroll loops because the trip count is input dependent.
+
+  llvm/8  code/0  make loop: it does unroll loops. The unroll kept the conditional exiting branch within the new loop body. 
+                             Check the CFG before and after (after_1) to see the unroll.
+
+  llvm/9  code/0  make loop: it does unroll loops. The unroll generated multiple bodies to merge conditional exiting branches within the new loop body as often as possible. 
+                             Check the CFG at after_2 to see the unroll.
+
+  llvm/16  code/0  make loop: Same as lllvm/9 but with an unroll factor of 4.
+                             Check the CFG at after_5 to see the unroll.
+
+  llvm/9  code/13  make loop: it does not unroll loops. The runtime cannot be used because the trip count is not constant.
+
+  llvm/8  code/13  make loop: it does unroll loops without using a runtime.
+
+
+Loop unrolling and peeling
+  llvm/10  code/0  make loop: it does unroll loops and peeling without the runtime. 
+                              Check the CFG at after_3 to see the unroll.
+
+  llvm/11  code/0  make loop: it does unroll loops and peeling with the runtime. 
+                              Check the CFG at after_4 to see the unroll.
