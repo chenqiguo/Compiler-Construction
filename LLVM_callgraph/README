@@ -1,0 +1,31 @@
+Iterate over a program's call graph
+  llvm/0   code/0  make: Iterate over functions and their callees
+
+  llvm/1   code/0  make: Iterate over functions and their callees. Print the body of the calles
+
+  llvm/2   code/0  make: Iterate over functions and their callees. Module pass.
+
+  llvm/2   code/1  make: Iterate over functions and their callees. This code has indirect calls. The pass has a bug. How can we fix it?
+
+  llvm/3   code/1  make: Iterate over functions and their callees. Handled indirect calls.
+                         There is a complexity problem: we have to iterate over all instructions of a function every time we have to find its callees.
+
+  llvm/4   code/1  make: Can we exploit the uses of a function?
+
+  llvm/5   code/0  make: The best solution: using CallGraphWrapperPass. There is a bug: indirect calls are not handled.
+
+  llvm/6   code/1  make: The best solution: using CallGraphWrapperPass. 
+
+
+Modify a program's call graph
+  llvm/7   code/2  make: It works detecting affected functions
+
+  llvm/7   code/3  make: It works detecting both affected and not affected functions.
+
+  llvm/8   code/2  make: Modify the call graph.
+
+  llvm/8   code/3  make: Modify the call graph.
+
+  llvm/8   code/4  make: Modify the call graph by cloning.
+
+  llvm/9   code/4  make: Modify the call graph by inlining.
