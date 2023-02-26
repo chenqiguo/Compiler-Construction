@@ -1,0 +1,64 @@
+=== The materials you find in this directory has been based on http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
+
+
+--- Manual compiling
+clang -I. print_hello_world.c invoke_print.c -o hello_world
+
+Inefficiencies:
+  You have to remember the command line
+  You have to compile all files anytime
+
+--- Makefile_0
+Let's fix the first problem.
+
+$ make -f Makefile_0
+It compiles hello_world
+
+$ make -f Makefile_0
+It didn't do anything
+
+Modify print_hello_world.c and rerun make
+$ make -f Makefile_0
+It recompiled hello_world
+
+--- Makefile_1
+Let's add parameters to the Makefile
+
+--- Makefile_2
+Let's fix the second problem.
+To do it, we declare the dependences to .o files rather than .c ones
+
+$ make -f Makefile_1
+It compiled hello_world
+
+$ make -f Makefile_1
+It didn't do anything
+
+Modify a .c file and rerun 
+$ make -f Makefile_1
+It regenerate only the .o file of the .c file modified and it regenerated the final "hello_world"
+
+Missing problem: if you modify .h file, nothing happened
+
+--- Makefile_3
+$@ is the left side of the rule
+%.o is any file ending with ".o"
+% is a way to create a single rule for all possible files with certain names
+% preserves the name. So in "%.o: %.c", if there is a file called "CAT.o", then it would bind it to "CAT.c"
+%< is the first item in the dependencies list (i.e., the file "%.c")
+
+--- Makefile_4
+More parameters to Makefile
+$^ is the right side of the rule
+
+--- Makefile_5
+Let's add a rule to clean the automatically-generated files.
+
+Problem: what if there is a file called "clean" in this directory?
+Let's add such file and see what happens
+
+--- Makefile_6
+Let's fix the previous problem with the PHONY rule
+
+--- Makefile_7
+If you feel a little bold, this is your Makefile

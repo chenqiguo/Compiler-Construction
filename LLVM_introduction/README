@@ -1,0 +1,50 @@
+===== 0
+Makefile_0: the simplest Makefile
+
+Makefile1: Variables in a Makefile
+  Problem: if I modify only one file, I have to recompile them all
+
+Makefile2: recompile only the files changed
+  Problem: if I modify the header, we don't recompile the files
+
+Makefile3: consider header changes as well
+
+Makefile4: use variables and makefile symbols
+
+Makefile5: clean
+  Problem: after compiling, create a "clean" file.
+
+Makefile6: phony clean
+
+Makefile7: more variables
+
+
+===== 1
+Generate binaries
+  - hello_world: generate a binary without the middle end
+  - hello_world_optimized: generate a binary with the middle end
+
+Generate bitcode
+  - hello_world.bc: generate the bitcode just before invoking the middle end
+  - hello_world_optimized.bc: generate the bitcode just after the middle end
+
+hello_world.ll: make bitcode human readoable
+
+run_bitcode: run bitcode directly
+
+hello_world_from_bitcode: generate binary from bitcode
+
+Run your CAT pass
+  hello_world_cat: with clang
+  invoke_template_opt_1: with opt
+
+Run your CAT pass at the end of the middle end
+  invoke_template_opt_2: with opt and by making a mistake
+  invoke_template_opt_3: with opt
+
+Measure the compilation time of a pass
+  hello_world_opt.bc: find out how much time is spent by CAT
+  invoke_template_opt_4: find out how much time is spent by all invoked passes
+
+Find out the invokation chain of a pass
+  invoke_template_opt_5: 

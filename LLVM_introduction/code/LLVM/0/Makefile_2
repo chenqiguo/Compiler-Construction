@@ -1,0 +1,5 @@
+CC=clang
+CFLAGS=-I.
+
+hello_world: print_hello_world.o invoke_print.o
+	$(CC) $(CFLAGS) print_hello_world.o invoke_print.o -o hello_world

@@ -1,0 +1,9 @@
+CC=clang
+CFLAGS=-I.
+DEPS = print_hello_world.h
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hello_world: print_hello_world.o invoke_print.o
+	$(CC) $(CFLAGS) print_hello_world.o invoke_print.o -o hello_world

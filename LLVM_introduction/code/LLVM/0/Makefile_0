@@ -1,0 +1,2 @@
+hello_world: print_hello_world.c invoke_print.c
+	clang -I. print_hello_world.c invoke_print.c -o hello_world

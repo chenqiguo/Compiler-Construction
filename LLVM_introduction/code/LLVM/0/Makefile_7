@@ -1,0 +1,19 @@
+CC=clang
+CFLAGS=-I. -Wall
+SOURCES=print_hello_world.c invoke_print.c
+DEPS = print_hello_world.h
+EXECUTABLE=hello_world
+OBJ=$(SOURCES:.c=.o)
+
+all: $(EXECUTABLE)
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(EXECUTABLE): $(OBJ)
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	rm -f $(OBJ) $(EXECUTABLE)
+
+.PHONY: clean
