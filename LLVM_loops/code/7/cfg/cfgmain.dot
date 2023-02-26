@@ -1,0 +1,12 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x392b960 [shape=record,label="{%0:\l  br label %1\l}"];
+	Node0x392b960 -> Node0x3937f10;
+	Node0x3937f10 [shape=record,label="{%1:\l\l  %z.0 = phi i32 [ %argc, %0 ], [ %3, %5 ]\l  %i.0 = phi i32 [ 0, %0 ], [ %4, %5 ]\l  %2 = call i32 @rand() #2\l  %3 = add nsw i32 %z.0, %2\l  %4 = add nsw i32 %i.0, 1\l  br label %5\l}"];
+	Node0x3937f10 -> Node0x3938020;
+	Node0x3938020 [shape=record,label="{%5:\l\l  %6 = icmp slt i32 %4, %argc\l  br i1 %6, label %1, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x3938020:s0 -> Node0x3937f10;
+	Node0x3938020:s1 -> Node0x3938d90;
+	Node0x3938d90 [shape=record,label="{%7:\l\l  ret i32 %3\l}"];
+}

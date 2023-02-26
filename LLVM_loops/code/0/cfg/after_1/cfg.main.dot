@@ -1,0 +1,18 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x442c200 [shape=record,label="{%2:\l  %3 = icmp sgt i32 %0, 0\l  br i1 %3, label %.preheader, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x442c200:s0 -> Node0x442c2f0;
+	Node0x442c200:s1 -> Node0x442c480;
+	Node0x442c2f0 [shape=record,label="{.preheader:                                       \l  br label %6\l}"];
+	Node0x442c2f0 -> Node0x4429a60;
+	Node0x442c630 [shape=record,label="{.loopexit:                                        \l  %.lcssa = phi i32 [ %9, %6 ], [ %13, %12 ]\l  br label %4\l}"];
+	Node0x442c630 -> Node0x442c480;
+	Node0x442c480 [shape=record,label="{%4:\l\l  %5 = phi i32 [ 0, %2 ], [ %.lcssa, %.loopexit ]\l  ret i32 %5\l}"];
+	Node0x4429a60 [shape=record,label="{%6:\l\l  %7 = phi i32 [ 0, %.preheader ], [ %14, %12 ]\l  %8 = phi i32 [ 0, %.preheader ], [ %13, %12 ]\l  %9 = tail call i32 @myF(i32 %8)\l  %10 = add nuw nsw i32 %7, 1\l  %11 = icmp eq i32 %10, %0\l  br i1 %11, label %.loopexit, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x4429a60:s0 -> Node0x442c630;
+	Node0x4429a60:s1 -> Node0x442c790;
+	Node0x442c790 [shape=record,label="{%12:\l\l  %13 = tail call i32 @myF(i32 %9)\l  %14 = add nuw nsw i32 %10, 1\l  %15 = icmp eq i32 %14, %0\l  br i1 %15, label %.loopexit, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x442c790:s0 -> Node0x442c630;
+	Node0x442c790:s1 -> Node0x4429a60;
+}

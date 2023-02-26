@@ -1,0 +1,14 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x3394740 [shape=record,label="{%0:\l  br label %1\l}"];
+	Node0x3394740 -> Node0x3394790;
+	Node0x3394790 [shape=record,label="{%1:\l\l  %d.0 = phi i32 [ undef, %0 ], [ %4, %5 ]\l  %i.0 = phi i32 [ 0, %0 ], [ %6, %5 ]\l  %2 = icmp slt i32 %i.0, %argc\l  br i1 %2, label %3, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x3394790:s0 -> Node0x3395660;
+	Node0x3394790:s1 -> Node0x33956f0;
+	Node0x3395660 [shape=record,label="{%3:\l\l  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x\l... i8]* @.str, i32 0, i32 0))\l  br label %5\l}"];
+	Node0x3395660 -> Node0x3394c90;
+	Node0x3394c90 [shape=record,label="{%5:\l\l  %6 = add nsw i32 %i.0, 1\l  br label %1\l}"];
+	Node0x3394c90 -> Node0x3394790;
+	Node0x33956f0 [shape=record,label="{%7:\l\l  ret i32 %d.0\l}"];
+}

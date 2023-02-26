@@ -1,0 +1,10 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x46b3090 [shape=record,label="{%2:\l  br label %4\l}"];
+	Node0x46b3090 -> Node0x46b10f0;
+	Node0x4694d70 [shape=record,label="{%3:\l\l  ret i32 %7\l}"];
+	Node0x46b10f0 [shape=record,label="{%4:\l\l  %5 = phi i32 [ 0, %2 ], [ %8, %4 ]\l  %6 = phi i32 [ 0, %2 ], [ %7, %4 ]\l  %7 = tail call i32 @myF(i32 %6)\l  %8 = add nuw nsw i32 %5, 1\l  %9 = icmp eq i32 %8, 10\l  br i1 %9, label %3, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x46b10f0:s0 -> Node0x4694d70;
+	Node0x46b10f0:s1 -> Node0x46b10f0;
+}

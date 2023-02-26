@@ -1,0 +1,28 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x3950570 [shape=record,label="{%2:\l  %3 = icmp sgt i32 %0, 0\l  br i1 %3, label %4, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x3950570:s0 -> Node0x39506a0;
+	Node0x3950570:s1 -> Node0x39506f0;
+	Node0x39506a0 [shape=record,label="{%4:\l\l  br label %.peel.begin\l}"];
+	Node0x39506a0 -> Node0x3950860;
+	Node0x3950860 [shape=record,label="{.peel.begin:                                      \l  br label %5\l}"];
+	Node0x3950860 -> Node0x394de10;
+	Node0x394de10 [shape=record,label="{%5:\l\l  %6 = tail call i32 @myF(i32 0)\l  %7 = add nuw nsw i32 0, 1\l  %8 = icmp eq i32 %7, %0\l  br i1 %8, label %.loopexit, label %.peel.next\l|{<s0>T|<s1>F}}"];
+	Node0x394de10:s0 -> Node0x3950810;
+	Node0x394de10:s1 -> Node0x3950d50;
+	Node0x3950d50 [shape=record,label="{.peel.next:                                       \l  br label %.peel.next1\l}"];
+	Node0x3950d50 -> Node0x3950ea0;
+	Node0x3950ea0 [shape=record,label="{.peel.next1:                                      \l  br label %.peel.newph\l}"];
+	Node0x3950ea0 -> Node0x3950ff0;
+	Node0x3950ff0 [shape=record,label="{.peel.newph:                                      \l  br label %11\l}"];
+	Node0x3950ff0 -> Node0x39510d0;
+	Node0x3951180 [shape=record,label="{.loopexit.loopexit:                               \l  %.lcssa.ph = phi i32 [ %14, %11 ]\l  br label %.loopexit\l}"];
+	Node0x3951180 -> Node0x3950810;
+	Node0x3950810 [shape=record,label="{.loopexit:                                        \l  %.lcssa = phi i32 [ %6, %5 ], [ %.lcssa.ph, %.loopexit.loopexit ]\l  br label %9\l}"];
+	Node0x3950810 -> Node0x39506f0;
+	Node0x39506f0 [shape=record,label="{%9:\l\l  %10 = phi i32 [ 0, %2 ], [ %.lcssa, %.loopexit ]\l  ret i32 %10\l}"];
+	Node0x39510d0 [shape=record,label="{%11:\l\l  %12 = phi i32 [ %15, %11 ], [ %7, %.peel.newph ]\l  %13 = phi i32 [ %14, %11 ], [ %6, %.peel.newph ]\l  %14 = tail call i32 @myF(i32 %13)\l  %15 = add nuw nsw i32 %12, 1\l  %16 = icmp eq i32 %15, %0\l  br i1 %16, label %.loopexit.loopexit, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x39510d0:s0 -> Node0x3951180;
+	Node0x39510d0:s1 -> Node0x39510d0;
+}

@@ -1,0 +1,32 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x316ea80 [shape=record,label="{%0:\l  br label %1\l}"];
+	Node0x316ea80 -> Node0x316ead0;
+	Node0x316ead0 [shape=record,label="{%1:\l\l  %i.0 = phi i32 [ 0, %0 ], [ %18, %17 ]\l  %2 = icmp slt i32 %i.0, %argc\l  br i1 %2, label %3, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x316ead0:s0 -> Node0x316f400;
+	Node0x316ead0:s1 -> Node0x316f490;
+	Node0x316f400 [shape=record,label="{%3:\l\l  br label %4\l}"];
+	Node0x316f400 -> Node0x316f5b0;
+	Node0x316f5b0 [shape=record,label="{%4:\l\l  %j.0 = phi i32 [ 0, %3 ], [ %15, %14 ]\l  %5 = icmp slt i32 %j.0, %argc\l  br i1 %5, label %6, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x316f5b0:s0 -> Node0x316f8b0;
+	Node0x316f5b0:s1 -> Node0x316f940;
+	Node0x316f8b0 [shape=record,label="{%6:\l\l  br label %7\l}"];
+	Node0x316f8b0 -> Node0x316fa60;
+	Node0x316fa60 [shape=record,label="{%7:\l\l  %z.0 = phi i32 [ 0, %6 ], [ %12, %11 ]\l  %8 = icmp slt i32 %z.0, %argc\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x316fa60:s0 -> Node0x316f660;
+	Node0x316fa60:s1 -> Node0x316fe00;
+	Node0x316f660 [shape=record,label="{%9:\l\l  %10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x\l... i8]* @.str, i32 0, i32 0))\l  br label %11\l}"];
+	Node0x316f660 -> Node0x316fb50;
+	Node0x316fb50 [shape=record,label="{%11:\l\l  %12 = add nsw i32 %z.0, 1\l  br label %7\l}"];
+	Node0x316fb50 -> Node0x316fa60;
+	Node0x316fe00 [shape=record,label="{%13:\l\l  br label %14\l}"];
+	Node0x316fe00 -> Node0x316f6f0;
+	Node0x316f6f0 [shape=record,label="{%14:\l\l  %15 = add nsw i32 %j.0, 1\l  br label %4\l}"];
+	Node0x316f6f0 -> Node0x316f5b0;
+	Node0x316f940 [shape=record,label="{%16:\l\l  br label %17\l}"];
+	Node0x316f940 -> Node0x316f210;
+	Node0x316f210 [shape=record,label="{%17:\l\l  %18 = add nsw i32 %i.0, 1\l  br label %1\l}"];
+	Node0x316f210 -> Node0x316ead0;
+	Node0x316f490 [shape=record,label="{%19:\l\l  ret i32 0\l}"];
+}

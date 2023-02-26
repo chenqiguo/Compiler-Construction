@@ -1,0 +1,13 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x23c2340 [shape=record,label="{%2:\l  %3 = alloca i32, align 4\l  %4 = bitcast i32* %3 to i8*\l  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %4) #3\l  store i32 %0, i32* %3, align 4, !tbaa !2\l  %5 = icmp sgt i32 %0, 0\l  br i1 %5, label %6, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x23c2340:s0 -> Node0x23c2970;
+	Node0x23c2340:s1 -> Node0x23c2a00;
+	Node0x23c2970 [shape=record,label="{%6:\l\l  br label %9\l}"];
+	Node0x23c2970 -> Node0x23c2b20;
+	Node0x23c2a00 [shape=record,label="{%7:\l\l  %8 = phi i32 [ 0, %2 ], [ %12, %9 ]\l  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %4) #3\l  ret i32 %8\l}"];
+	Node0x23c2b20 [shape=record,label="{%9:\l\l  %10 = phi i32 [ %13, %9 ], [ 0, %6 ]\l  %11 = phi i32 [ %12, %9 ], [ 0, %6 ]\l  %12 = call i32 @myF(i32 %11, i32* nonnull %3)\l  %13 = add nuw nsw i32 %10, 1\l  %14 = load i32, i32* %3, align 4, !tbaa !2\l  %15 = icmp slt i32 %13, %14\l  br i1 %15, label %9, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x23c2b20:s0 -> Node0x23c2b20;
+	Node0x23c2b20:s1 -> Node0x23c2a00;
+}

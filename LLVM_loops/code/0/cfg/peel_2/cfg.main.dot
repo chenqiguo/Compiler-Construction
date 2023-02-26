@@ -1,0 +1,33 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x3cb46b0 [shape=record,label="{%2:\l  %3 = icmp sgt i32 %0, 0\l  br i1 %3, label %4, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x3cb46b0:s0 -> Node0x3cb47e0;
+	Node0x3cb46b0:s1 -> Node0x3cb4830;
+	Node0x3cb47e0 [shape=record,label="{%4:\l\l  br label %.peel.begin\l}"];
+	Node0x3cb47e0 -> Node0x3cb49a0;
+	Node0x3cb49a0 [shape=record,label="{.peel.begin:                                      \l  br label %5\l}"];
+	Node0x3cb49a0 -> Node0x3cb1f50;
+	Node0x3cb1f50 [shape=record,label="{%5:\l\l  %6 = tail call i32 @myF(i32 0)\l  %7 = add nuw nsw i32 0, 1\l  %8 = icmp eq i32 %7, %0\l  br i1 %8, label %.loopexit, label %.peel.next\l|{<s0>T|<s1>F}}"];
+	Node0x3cb1f50:s0 -> Node0x3cb4950;
+	Node0x3cb1f50:s1 -> Node0x3cb4e90;
+	Node0x3cb4e90 [shape=record,label="{.peel.next:                                       \l  br label %9\l}"];
+	Node0x3cb4e90 -> Node0x3cb4fe0;
+	Node0x3cb4fe0 [shape=record,label="{%9:\l\l  %10 = tail call i32 @myF(i32 %6)\l  %11 = add nuw nsw i32 %7, 1\l  %12 = icmp eq i32 %11, %0\l  br i1 %12, label %.loopexit, label %.peel.next1\l|{<s0>T|<s1>F}}"];
+	Node0x3cb4fe0:s0 -> Node0x3cb4950;
+	Node0x3cb4fe0:s1 -> Node0x3cb5240;
+	Node0x3cb5240 [shape=record,label="{.peel.next1:                                      \l  br label %.peel.next2\l}"];
+	Node0x3cb5240 -> Node0x3cb53c0;
+	Node0x3cb53c0 [shape=record,label="{.peel.next2:                                      \l  br label %.peel.newph\l}"];
+	Node0x3cb53c0 -> Node0x3cb54a0;
+	Node0x3cb54a0 [shape=record,label="{.peel.newph:                                      \l  br label %15\l}"];
+	Node0x3cb54a0 -> Node0x3cb5580;
+	Node0x3cb5630 [shape=record,label="{.loopexit.loopexit:                               \l  %.lcssa.ph = phi i32 [ %18, %15 ]\l  br label %.loopexit\l}"];
+	Node0x3cb5630 -> Node0x3cb4950;
+	Node0x3cb4950 [shape=record,label="{.loopexit:                                        \l  %.lcssa = phi i32 [ %6, %5 ], [ %10, %9 ], [ %.lcssa.ph, %.loopexit.loopexit\l... ]\l  br label %13\l}"];
+	Node0x3cb4950 -> Node0x3cb4830;
+	Node0x3cb4830 [shape=record,label="{%13:\l\l  %14 = phi i32 [ 0, %2 ], [ %.lcssa, %.loopexit ]\l  ret i32 %14\l}"];
+	Node0x3cb5580 [shape=record,label="{%15:\l\l  %16 = phi i32 [ %19, %15 ], [ %11, %.peel.newph ]\l  %17 = phi i32 [ %18, %15 ], [ %10, %.peel.newph ]\l  %18 = tail call i32 @myF(i32 %17)\l  %19 = add nuw nsw i32 %16, 1\l  %20 = icmp eq i32 %19, %0\l  br i1 %20, label %.loopexit.loopexit, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x3cb5580:s0 -> Node0x3cb5630;
+	Node0x3cb5580:s1 -> Node0x3cb5580;
+}

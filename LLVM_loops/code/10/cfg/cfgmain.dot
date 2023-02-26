@@ -1,0 +1,19 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x4273960 [shape=record,label="{%0:\l  br label %1\l}"];
+	Node0x4273960 -> Node0x4280060;
+	Node0x4280060 [shape=record,label="{%1:\l\l  %z.0 = phi i32 [ %argc, %0 ], [ %3, %6 ]\l  %i.0 = phi i32 [ 0, %0 ], [ %5, %6 ]\l  %2 = call i32 @rand() #2\l  %3 = add nsw i32 %z.0, %2\l  br label %4\l}"];
+	Node0x4280060 -> Node0x4280d30;
+	Node0x4280d30 [shape=record,label="{%4:\l\l  %i.1 = phi i32 [ %i.0, %1 ], [ %5, %10 ]\l  %5 = add nsw i32 %i.1, 1\l  br label %6\l}"];
+	Node0x4280d30 -> Node0x4280170;
+	Node0x4280170 [shape=record,label="{%6:\l\l  %7 = icmp slt i32 %5, %argc\l  br i1 %7, label %1, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x4280170:s0 -> Node0x4280060;
+	Node0x4280170:s1 -> Node0x4281090;
+	Node0x4281090 [shape=record,label="{%8:\l\l  %9 = icmp sgt i32 %3, 10\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x4281090:s0 -> Node0x4280e30;
+	Node0x4281090:s1 -> Node0x4280de0;
+	Node0x4280e30 [shape=record,label="{%10:\l\l  br label %4\l}"];
+	Node0x4280e30 -> Node0x4280d30;
+	Node0x4280de0 [shape=record,label="{%11:\l\l  ret i32 %3\l}"];
+}
