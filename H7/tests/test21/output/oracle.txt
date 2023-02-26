@@ -1,0 +1,8 @@
+H1: 	Value 2 = 8
+H1: 	Result = 24
+CAT invocations = 6
+
+---my wrong result---
+H1:     Value 2 = 8
+H1:     Result = 13
+CAT invocations = 5
